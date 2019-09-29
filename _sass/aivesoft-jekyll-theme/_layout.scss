@@ -45,11 +45,13 @@
     color: $text-color;
     @include relative-font-size(2.382);
   }
+
   a {
     &:hover {
       text-decoration: none;
     }
   }
+
   img {
     width: 50%;
     height: auto;
@@ -273,9 +275,11 @@
   .post-store {
     margin-bottom: $spacing-unit;
   }
+
   .post-header {
     margin-bottom: $spacing-unit;
   }
+
   .post-landing-image {
     margin: 0 0 $spacing-unit * 0.618 0;
   }
@@ -319,35 +323,35 @@
     }
   }
 
-  .social-media-list {
-    display: table;
-    margin: 0 auto;
+}
 
-    li {
-      float: left;
-      margin: 0 5px;
+.social-media-list {
+  display: table;
+  margin: 0 auto;
 
-      &:first-of-type {
-        margin-left: 0;
-      }
+  li {
+    float: left;
+    margin: 0 5px;
 
-      &:last-of-type {
-        margin-right: 0;
-      }
+    &:first-of-type {
+      margin-left: 0;
+    }
 
-      a {
-        display: block;
-        padding: $spacing-unit / 4;
-        border: 1px solid $grey-color-light;
-      }
+    &:last-of-type {
+      margin-right: 0;
+    }
 
-      &:hover .svg-icon {
-        fill: currentColor;
-      }
+    a {
+      display: block;
+      padding: $spacing-unit / 4;
+      border: 1px solid $grey-color-light;
+    }
+
+    &:hover .svg-icon {
+      fill: currentColor;
     }
   }
 }
-
 
 /**
  * Grid helpers
@@ -376,6 +380,7 @@
   -ms-transition: background 2s ease;
   transition: background 2s ease;
 }
+
 .brand-bg a i:hover {
   -webkit-transition: background 2s ease;
   -moz-transition: background 2s ease;
@@ -383,141 +388,187 @@
   -ms-transition: background 2s ease;
   transition: background 2s ease;
 }
+
 .brand-bg a.facebook i {
   background: #3280e7;
 }
+
 .brand-bg a.facebook i:hover {
   background: #134fa0;
 }
+
 .brand-bg a.twitter i {
   background: #32c8de;
 }
+
 .brand-bg a.twitter i:hover {
   background: #188392;
 }
+
 .brand-bg a.telegram i {
   background: #32c8de;
 }
+
 .brand-bg a.telegram i:hover {
   background: #188392;
 }
+
 .brand-bg a.google-plus i {
   background: #f96f4a;
 }
+
 .brand-bg a.google-plus i:hover {
   background: #eb6440;
 }
+
 .brand-bg a.linkedin i {
   background: #729fda;
 }
+
 .brand-bg a.linkedin i:hover {
   background: #3069b6;
 }
+
 .brand-bg a.keybase i {
   background: #729fda;
 }
+
 .brand-bg a.keybase i:hover {
   background: #3069b6;
 }
+
 .brand-bg a.microdotblog i {
   background: #f8a841;
 }
+
 .brand-bg a.microdotblog i:hover {
   background: #cc7607;
 }
+
 .brand-bg a.pinterest i {
   background: #ed5441;
 }
+
 .brand-bg a.pinterest i:hover {
   background: #b72411;
 }
+
 .brand-bg a.dropbox i {
   background: #32c8de;
 }
+
 .brand-bg a.dropbox i:hover {
   background: #188392;
 }
+
 .brand-bg a.bitcoin i {
   background: #f8a841;
 }
+
 .brand-bg a.bitcoin i:hover {
   background: #cc7607;
 }
+
 .brand-bg a.foursquare i {
   background: #22bed4;
 }
+
 .brand-bg a.foursquare i:hover {
   background: #146f7c;
 }
+
 .brand-bg a.flickr i {
   background: #ff61e7;
 }
+
 .brand-bg a.flickr i:hover {
   background: #fa00d4;
 }
+
 .brand-bg a.github i {
   background: #666666;
 }
+
 .brand-bg a.github i:hover {
   background: #333333;
 }
+
 .brand-bg a.instagram i {
   background: #d6917a;
 }
+
 .brand-bg a.instagram i:hover {
   background: #b35637;
 }
+
 .brand-bg a.skype i {
   background: #32c8de;
 }
+
 .brand-bg a.skype i:hover {
   background: #188392;
 }
+
 .brand-bg a.tumblr i {
   background: #84a1c8;
 }
+
 .brand-bg a.tumblr i:hover {
   background: #476d9f;
 }
+
 .brand-bg a.vimeo i {
   background: #32c8de;
 }
+
 .brand-bg a.vimeo i:hover {
   background: #188392;
 }
+
 .brand-bg a.dribbble i {
   background: #ff2edf;
 }
+
 .brand-bg a.dribbble i:hover {
   background: #c700a9;
 }
+
 .brand-bg a.youtube i {
   background: #ed5441;
 }
+
 .brand-bg a.youtube i:hover {
   background: #b72411;
 }
+
 .brand-bg a.youtube_channel i {
   background: #ed5441;
 }
+
 .brand-bg a.youtube_channel i:hover {
   background: #b72411;
 }
+
 .brand-bg a.email i {
   background: #32c8de;
 }
+
 .brand-bg a.email i:hover {
   background: #188392;
 }
+
 .brand-bg a.rss i {
   background: #d6917a;
 }
+
 .brand-bg a.rss i:hover {
   background: #b35637;
 }
+
 .brand-bg a.mastodon i {
   background: #3280e7;
 }
+
 .brand-bg a.mastodon i:hover {
   background: #134fa0;
 }
@@ -531,6 +582,7 @@
   text-align: center;
   border-radius: 100%;
 }
+
 .circle-2 {
   display: inline-block;
   height: 25px;
@@ -539,6 +591,7 @@
   text-align: center;
   border-radius: 100%;
 }
+
 .circle-3 {
   display: inline-block;
   height: 35px;
@@ -547,6 +600,7 @@
   text-align: center;
   border-radius: 100%;
 }
+
 .circle-4 {
   display: inline-block;
   height: 50px;
@@ -555,6 +609,7 @@
   text-align: center;
   border-radius: 100%;
 }
+
 .circle-5 {
   display: inline-block;
   height: 70px;
