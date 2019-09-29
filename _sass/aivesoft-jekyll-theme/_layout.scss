@@ -298,6 +298,10 @@
   .post-content {
     margin-bottom: $spacing-unit;
 
+    img {
+      margin-bottom: $spacing-unit * 0.382;
+    }
+    
     h2 {
       @include relative-font-size(1.75);
 
