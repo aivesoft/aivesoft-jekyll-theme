@@ -1,31 +1,89 @@
 <header class="site-header">
-
+  <div class="top-bar">
+    <div class="wrapper">
+      {%- if site.email -%}
+      <span class="contact brand-bg">
+        <a href="mailto:{{ site.email }}" class="email"><i class="fas fa-envelope circle-2"></i>&nbsp; {{ site.email }}</a>
+      </span>
+      {%- endif -%}
+      <span class="social-links brand-bg">
+        {%- if social.dribbble -%}
+        <a href="https://dribbble.com/{{ social.dribbble | cgi_escape | escape }}" class="dribbble" target="_blank" title="{{ social.dribbble | escape }}"><i class="fab fa-dribbble circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.facebook -%}
+        <a href="https://www.facebook.com/{{ social.facebook | cgi_escape | escape }}" class="facebook" target="_blank" title="{{ social.facebook | escape }}"><i class="fab fa-facebook circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.flickr -%}
+        <a href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}" class="flickr" target="_blank" title="{{ social.flickr | escape }}"><i class="fab fa-flickr circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.github -%}
+        <a href="https://github.com/{{ social.github | cgi_escape | escape }}" class="github" target="_blank"><i class="fab fa-github circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.instagram -%}
+        <a href="https://www.instagram.com/{{ social.instagram | cgi_escape | escape }}" class="instagram" target="_blank" title="{{ social.instagram | escape }}"><i class="fab fa-instagram circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.linkedin -%}
+        <a href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}" class="linkedin" target="_blank" title="{{ social.linkedin | escape }}"><i class="fab fa-linkedin circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.pinterest -%}
+        <a href="https://www.pinterest.com/{{ social.pinterest | cgi_escape | escape }}" class="pinterest" target="_blank" title="{{ social.pinterest | escape }}"><i class="fab fa-pinterest circle-2"></i></a>
+        {%- endif -%}
+        {%- for mst in social.mastodon -%}
+        {%- if mst.username and mst.instance -%}
+        <a href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" class="mastodon" target="_blank" title="{{ mst.username | escape }}"><i class="fab fa-mastodon circle-2"></i></a>
+        {%- endif -%}
+        {%- endfor -%}
+        {%- if social.twitter -%}
+        <a href="https://twitter.com/{{ social.twitter | cgi_escape | escape }}" title="{{ social.twitter | escape }}" class="twitter" target="_blank" title="{{ social.twitter | escape }}"><i class="fab fa-twitter circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.youtube -%}
+        <a href="https://www.youtube.com/{{ social.youtube | cgi_escape | escape }}" class="youtube" target="_blank" title="{{ social.youtube | escape }}"><i class="fas fa-video circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.youtube_channel -%}
+        <a href="https://www.youtube.com/channel/{{ social.youtube_channel | cgi_escape | escape }}" class="youtube_channel" target="_blank" title="{{ social.youtube_channel | escape }}"><i class="fab fa-youtube circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.telegram -%}
+        <a href="https://t.me/{{ social.telegram | cgi_escape | escape }}" class="telegram" target="_blank" title="{{ social.telegram | escape }}"><i class="fab fa-telegram circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.keybase -%}
+        <a href="https://keybase.io/{{ social.keybase | cgi_escape | escape }}" class="keybase" target="_blank" title="{{ social.keybase | escape }}"><i class="fab fa-keybase circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.microdotblog -%}
+        <a href="https://micro.blog/{{ social.microdotblog | cgi_escape | escape }}" class="microdotblog" target="_blank" title="{{ social.microdotblog | escape }}"><i class="fas fa-star circle-2"></i></a>
+        {%- endif -%}
+        {%- if social.rss -%}
+        <a href="{{ 'feed.xml' | relative_url }}" class="rss" target="_blank" title="{{ social.rss | escape }}"><i class="fas fa-rss circle-2"></i></a>
+        {%- endif -%}
+      </span>
+    </div>
+  </div>
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+
+    <div class="logo-wrapper">
+      <a href="{{ '/' | relative_url }}">
+        {%- if site.logo -%}
+        <img src="/assets/images/logo_transparent.png" alt="{{ site.title | escape }}" />
+        {%- else -%}
+        <span class="logo-text">{{ site.title }}</span>
+        {%- endif -%}
+      </a>
+    </div>
 
     {%- if titles_size > 0 -%}
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger">
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
-      </nav>
+    <nav class="site-nav">
+      <div class="trigger">
+        {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </nav>
     {%- endif -%}
   </div>
 </header>

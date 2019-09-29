@@ -4,35 +4,57 @@ layout: default
 
 <div class="home">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+  <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.aivesoft-jekyll-theme.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li>
+      {%- assign date_format = site.aivesoft-jekyll-theme.date_format | default: "%b %-d, %Y" -%}
+      <h3 class="post-title">
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      <div class="post-meta"><i class="far fa-calendar-alt"></i> {{ post.date | date: date_format }}</div>
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        {%- if post.image -%}
+        <div>
+          <img src="{{ post.image }}">
+        </div>
         {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="feed-subscribe">
-      <a href="{{ 'feed.xml' | relative_url }}">
-        <svg class="svg-icon orange"><use xlink:href="{{ 'assets/social-icons.svg#rss' | relative_url }}"></use></svg><span>Subscribe</span>
       </a>
-    </p>
+      {%- if post.appstore or post.playstore -%}
+      <div class="post-store">
+        {%- if post.appstore -%}
+        <a href="{{ post.appstore }}" target="_blank"><img src="/assets/images/appstore.png" /></a>
+        {%- endif -%}
+        {%- if post.playstore -%}
+        <a href="{{ post.playstore }}" target="_blank"><img src="/assets/images/playstore.png" /></a>
+        {%- endif -%}
+      </div>
+      {%- endif -%}
+      <div class="post-content">
+        {{ post.content | strip_html | truncatewords:20}}
+      </div>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  <p class="feed-subscribe">
+    <a href="{{ 'feed.xml' | relative_url }}">
+      <svg class="svg-icon orange">
+        <use xlink:href="{{ 'assets/images/social-icons.svg#rss' | relative_url }}"></use>
+      </svg><span>Subscribe</span>
+    </a>
+  </p>
   {%- endif -%}
 
 </div>

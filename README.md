@@ -1,33 +1,25 @@
-# minima
+# aivesoft-jekyll-theme
 
-*Minima is a one-size-fits-all Jekyll theme for writers*. It's Jekyll's default (and first) theme. It's what you get when you run `jekyll new`.
+aivesoft-jekyll-theme. customized version of [jekyll minima theme](https://github.com/jekyll/minima).
 
-***Disclaimer:** The information here may vary depending on the version you're using. Please refer to the `README.md` bundled
-within the theme-gem for information specific to your version or by pointing your browser to the Git tag corresponding to your
-version. e.g. https://github.com/jekyll/minima/blob/v2.5.0/README.md*  
-*Running `bundle show minima` will provide you with the local path to your current theme version.*
+> **_NOTE: README is currently under writing. not completed._**
 
+[Theme preview](https://aivesoft.github.io/)
 
-[Theme preview](https://jekyll.github.io/minima/)
-
-![minima theme preview](/screenshot.png)
+![theme preview image](/assets/images/screenshot.png)
 
 ## Installation
 
 Add this line to your Jekyll site's Gemfile:
 
 ```ruby
-gem "minima"
+gem "aivesoft-jekyll-theme"
 ```
 
 And then execute:
 
     $ bundle
 
-
-## Contents At-A-Glance
-
-Minima has been scaffolded by the `jekyll new-theme` command and therefore has all the necessary files and directories to have a new Jekyll site up and running with zero-configuration.
 
 ### Layouts
 
@@ -65,17 +57,17 @@ Refers to snippets of code within the `_includes` directory that can be inserted
   - `google-analytics.html` &mdash; Inserts Google Analytics module (active only in production environment).
   - `head.html` &mdash; Code-block that defines the `<head></head>` in *default* layout.
   - `header.html` &mdash; Defines the site's main header section. By default, pages with a defined `title` attribute will have links displayed here.
-  - `social.html` &mdash; Renders social-media icons based on the `minima:social_links` data in the config file.
+  - `social.html` &mdash; Renders social-media icons based on the `aivesoft-jekyll-theme:social_links` data in the config file.
 
 
 ### Sass
 
 Refers to `.scss` files within the `_sass` directory that define the theme's styles.
 
-  - `minima.scss` &mdash; The core file imported by preprocessed `css/style.scss`, it defines the variable defaults for the theme and also further imports sass partials to supplement itself.
-  - `minima/_base.scss` &mdash; Resets and defines base styles for various HTML elements.
-  - `minima/_layout.scss` &mdash; Defines the visual style for various layouts.
-  - `minima/_syntax-highlighting.scss` &mdash; Defines the styles for syntax-highlighting.
+  - `aivesoft-jekyll-theme.scss` &mdash; The core file imported by preprocessed `css/style.scss`, it defines the variable defaults for the theme and also further imports sass partials to supplement itself.
+  - `aivesoft-jekyll-theme/_base.scss` &mdash; Resets and defines base styles for various HTML elements.
+  - `aivesoft-jekyll-theme/_layout.scss` &mdash; Defines the visual style for various layouts.
+  - `aivesoft-jekyll-theme/_syntax-highlighting.scss` &mdash; Defines the styles for syntax-highlighting.
 
 
 ### Assets
@@ -88,7 +80,7 @@ This directory can include sub-directories to manage assets of similar type (`im
 
 ### Plugins
 
-Minima comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
+aivesoft-jekyll-theme comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
 
 
 ## Usage
@@ -96,7 +88,7 @@ Minima comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) p
 Have the following line in your config file:
 
 ```yaml
-theme: minima
+theme: aivesoft-jekyll-theme
 ```
 
 
