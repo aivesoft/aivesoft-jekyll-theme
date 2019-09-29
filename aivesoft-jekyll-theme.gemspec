@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "aivesoft-jekyll-theme"
-  spec.version       = "1.0.1"
+  spec.version       = "1.0.2"
   spec.authors       = ["aivesoft"]
   spec.email         = ["contact@aivesoft.com"]
 
